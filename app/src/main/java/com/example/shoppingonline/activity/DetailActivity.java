@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 
@@ -42,13 +43,22 @@ public class DetailActivity extends AppCompatActivity {
         binding.btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (MainActivity.listGioHang.size() > 0) {
-
-                } else {
-                    int soLuong = Integer.parseInt(binding.spinner.getSelectedItem().toString());
+//                if (MainActivity.listGioHang.size() > 0) {
+//                    int sl=1;
+//                    for (int i = 0; i < MainActivity.listGioHang.size(); i++) {
+//                        if (MainActivity.listGioHang.get(i).getIdsp() == id) {
+//                            MainActivity.listGioHang.get(i).setSoluong(MainActivity.listGioHang.get(i).getSoluong() + sl);
+//                            if (MainActivity.listGioHang.size() >= 10) {
+//                                MainActivity.listGioHang.get(i).setSoluong(10);
+//                            }
+//                            MainActivity.listGioHang.get(i).setGiasp(price * MainActivity.listGioHang.get(i).getSoluong());
+//                        }
+//                    }
+//                } else {
+                    int soLuong = 1;
                     Integer total = price * soLuong;
-                    MainActivity.listGioHang.add(new GioHang(id,name,total,img,soLuong));
-                }
+                    MainActivity.listGioHang.add(new GioHang(id, name, total, img, soLuong));
+//                }
                 Intent intent = new Intent(getApplicationContext(), GioHangActivity.class);
                 startActivity(intent);
             }
@@ -56,9 +66,9 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void CatchEventSpninner() {
-        Integer[] soLuong = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_dropdown_item, soLuong);
-        binding.spinner.setAdapter(adapter);
+//        Integer[] soLuong = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+//        ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_dropdown_item, soLuong);
+//        binding.spinner.setAdapter(adapter);
     }
 
     private void GetDetailProduct() {

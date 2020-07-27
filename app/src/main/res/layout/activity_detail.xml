@@ -53,20 +53,21 @@
 
                 android:textStyle="bold" />
 
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_margin="5dp"
-                android:background="@drawable/spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:textAlignment="center" />
+<!--            <Spinner-->
+<!--                android:id="@+id/spinner"-->
+<!--                android:layout_margin="5dp"-->
+<!--                android:background="@drawable/spinner"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textAlignment="center" />-->
             <Button
                 android:id="@+id/btnAddToCart"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Thêm vào giỏ hàng"
+                android:layout_gravity="center"
                 android:textColor="#9A8C11"
                 android:textSize="10sp" />
         </LinearLayout>

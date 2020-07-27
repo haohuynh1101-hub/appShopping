@@ -65,7 +65,8 @@
                 android:layout_marginTop="5dp"
                 android:text="1"
                 android:textAlignment="center"
-                android:id="@+id/edtValues"
+                android:id="@+id/edtValue"
+                android:enabled="false"
                 android:textSize="18sp"/>
             <Button
                 android:id="@+id/btnAdd"
