@@ -43,22 +43,20 @@ public class DetailActivity extends AppCompatActivity {
         binding.btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if (MainActivity.listGioHang.size() > 0) {
-//                    int sl=1;
-//                    for (int i = 0; i < MainActivity.listGioHang.size(); i++) {
-//                        if (MainActivity.listGioHang.get(i).getIdsp() == id) {
-//                            MainActivity.listGioHang.get(i).setSoluong(MainActivity.listGioHang.get(i).getSoluong() + sl);
-//                            if (MainActivity.listGioHang.size() >= 10) {
-//                                MainActivity.listGioHang.get(i).setSoluong(10);
-//                            }
-//                            MainActivity.listGioHang.get(i).setGiasp(price * MainActivity.listGioHang.get(i).getSoluong());
-//                        }
-//                    }
-//                } else {
+                if (MainActivity.listGioHang.size() > 0) {
+                    int sl=1;
+                    for (int i = 0; i < MainActivity.listGioHang.size(); i++) {
+                        if (MainActivity.listGioHang.get(i).getIdsp() == id) {
+                            MainActivity.listGioHang.get(i).setSoluong(MainActivity.listGioHang.get(i).getSoluong() + sl);
+
+                            MainActivity.listGioHang.get(i).setGiasp(price * MainActivity.listGioHang.get(i).getSoluong());
+                        }
+                    }
+                } else {
                     int soLuong = 1;
                     Integer total = price * soLuong;
                     MainActivity.listGioHang.add(new GioHang(id, name, total, img, soLuong));
-//                }
+                }
                 Intent intent = new Intent(getApplicationContext(), GioHangActivity.class);
                 startActivity(intent);
             }

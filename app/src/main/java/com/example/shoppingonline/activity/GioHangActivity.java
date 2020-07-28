@@ -37,6 +37,22 @@ public class GioHangActivity extends AppCompatActivity {
     private void addEvents() {
         ContinuePurchase();
         CatchOnItemListview();
+        CompletePurchase();
+    }
+
+    private void CompletePurchase() {
+    binding.btnThanhToan.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if(MainActivity.listGioHang.size()<=0){
+                Toast.makeText(getApplicationContext(),"Giỏ hàng của bạn đang trống",Toast.LENGTH_SHORT).show();
+            }else {
+                Intent intent=new Intent(getApplicationContext(),ThongTinKhachHangActivity.class);
+                startActivity(intent);
+            }
+
+        }
+    });
     }
 
     private void CatchOnItemListview() {
@@ -50,6 +66,7 @@ public class GioHangActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
                         MainActivity.listGioHang.remove(position);
+                        gioHangAdapter.notifyDataSetChanged();
                         EventUtil();
                         CheckData();
                     }
@@ -93,11 +110,9 @@ public class GioHangActivity extends AppCompatActivity {
 
     private void CheckData() {
         if (MainActivity.listGioHang.size() <= 0) {
-            gioHangAdapter.notifyDataSetChanged();
             binding.txtThongBao.setVisibility(View.VISIBLE);
             binding.lvGioHang.setVisibility(View.INVISIBLE);
         } else {
-             gioHangAdapter.notifyDataSetChanged();
             binding.txtThongBao.setVisibility(View.INVISIBLE);
             binding.lvGioHang.setVisibility(View.VISIBLE);
 

@@ -67,11 +67,16 @@ public class MainActivity extends AppCompatActivity {
 
             GetDataSanPham();
             CatchOnItemListView();
+            CatchOnItemRecycleView();
         } else {
             CheckConnection.showToast(getApplicationContext(), "Bạn hãy kiểm tra lại kết nối");
             finish();
         }
         addControls();
+    }
+
+    private void CatchOnItemRecycleView() {
+
     }
 
     @Override
@@ -152,6 +157,7 @@ public class MainActivity extends AppCompatActivity {
         binding.lvManHinhChinh.setAdapter(loaiSPAdapter);
         listLoaiSP.add(0, new LoaiSP(0, "Trang chủ", "https://img.icons8.com/fluent/48/000000/home.png"));
         sanPhamAdapter = new SanPhamAdapter(getApplicationContext(), listProduct);
+
         binding.recyclerview.setHasFixedSize(true);
         binding.recyclerview.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
         binding.recyclerview.setAdapter(sanPhamAdapter);
